@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">     <!-- require for IE -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">   <!-- ensure display and zoom properly, based on screen width -->
+
+    <meta name="author" content="define author of the page -- your name">
+    <meta name="description" content="define a description of this page">
+    <meta name="keywords" content="define, keywords, for, search, engines, separated, by, commas">
+
+    <title>Example home page</title>     <!-- specify title in a browser tab -->
+
+    <link rel="stylesheet" href="styles/main-inclass2.css">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lato:100,300,400">
+    <link rel="shortcut icon" href="http://www.cs.virginia.edu/~up3f/cs4640/images/webpl.png" type="image/ico" />
+    <link rel="stylesheet" href="https://storage.cloud.google.com/in-class-assignment-2-bucket/main.css">
+
+  </head>
+
+  <body>
+
+    <!-- apply grid system: row and column -->
+
+    <header class="primary-header container">
+      <div class="row">
+        <div class="col-2">
+          <h1 class="logo">
+            <a href="index.html">Your <br/>name</a>
+          </h1>
+        </div>
+
+        <!-- id attribute points to format specified in fadeshow id selector, to hide nav when screen is narrow
+             Note: business logic should be taken into account when deciding whether to hide a portion of screen
+             (design decision must be made) -->
+        <div class="col-10" id="fadeshow">
+          <h3 class="tagline">some text </h3>
+
+          <!-- class attribute points to nav and primary-nav selectors,
+               notice we use primary-nav in addition to nav to create the top menu-like navigation (compared with the footer nav) -->
+          <nav class="nav primary-nav">
+            <ul>
+              <li><a href="index.html" title="may or may not need, depending on design">Home</a></li>
+              <li><a href="software.html" title="software or tool you have involved or created">Software</a></li>
+              <li><a href="research.html" title="research you have involved">Research</a></li>
+              <li><a href="activity.html" title="activities you have involved">Activity</a></li>
+              <li><a href="contact.html" title="either email or form">Contact me</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <div class="row">
+      <div class="col-12">
+        <section class="title container">
+          <h2>Software engineer and researcher</h2>
+          <p>Brief intro, a few sentences about your web page/site or tagline</p>
+        </section>
+      </div>
+    </div>
+
+    <!-- highlight / showcase -->
+    <section class="content-row row">
+      <div class="grid">
+
+        <section class="highlight content-col col-3">
+          <a href="highlight1.html">
+            <img src="images/highlight1.png" alt="image showing highlight1"> <br/>
+            <font class="subtitle">your-awesome-project1</font>
+          </a>
+          <p>brief description about this project (probably phases or 2-3 sentences)</p>
+        </section>
+
+        <section class="highlight content-col col-3">
+          <a href="highlight2.html">
+            <img src="images/highlight2.png" alt="image showing highlight2"> <br/>
+            <font class="subtitle">your-awesome-project2</font>
+          </a>
+          <p>brief description about this project (probably phases or 2-3 sentences)</p>
+        </section>
+
+        <section class="highlight content-col col-3">
+          <a href="highlight3.html">
+            <img src="images/highlight3.png" alt="image showing highlight3"> <br/>
+            <font class="subtitle">your-awesome-project1</font>
+          </a>
+          <p>brief description about this project (probably phases or 2-3 sentences)</p>
+        </section>
+
+      </div>
+    </section>
+
+    <footer class="primary-footer container">
+      <small class="copyright">&copy; Your name</small>
+      <nav class="nav">
+        <ul>
+          <li><a href="index.html" title="may or may not need, depending on design">Home</a></li>
+          <li><a href="software.html" title="software or tool you have involved or created">Software</a></li>
+          <li><a href="research.html" title="research you have involved">Research</a></li>
+          <li><a href="activity.html" title="activities you have involved">Activity</a></li>
+          <li><a href="contact.html" title="either email or form">Contact me</a></li>
+        </ul>
+      </nav>
+    </footer>
+
+  </body>
+</html>
