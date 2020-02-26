@@ -1,6 +1,6 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">  <!-- required to handle IE -->
@@ -92,47 +92,45 @@
 
     <div class="form-horizontal" >
       <div class="from-group">
-        <div class="col-lg">
-        </div>
-        <div class="row-lg">
-          <!-- <h3>Crowd Testing</h3>
-          <p>Brief description about the crowd testing your company provides.
-             Include some highlights that draw customers' attention.
-          </p> -->
+        <div class="row">
+          <div class="col-md-6">
+            <br><br>
+            <h3>Login</h3>
+            <form action="" name="LoginForm" method="post">
+                <div class = "form-group">
+                    <input type="email" class="form-control" placeholder="Email" id="loginEmail">
+                </div>
+                <div class = "form-group">
+                  <input type="password" class="form-control" placeholder="Password" id="loginPassword">
+                </div>
+              <input type = "submit" value = "Login" class ="btn btn-secondary btn-block"/>
+        </form>
 
-          <body>
-            <form>
+          </div>
+
+          <div class="col-md-6">
+          <h3>New? Make an Account</h3>
+          <form action="" name="RegisterForm" method="post" onsubmit="return signUpValidate()">
                 <div class = "form-group">
-                    <input type="text" class="form-control" placeholder="Name" name="Name">
+                    <input type="text" class="form-control" placeholder="Name" id="Name">
                 </div>
-            </form>
-          </body>
-          <body>
-            <form>
                 <div class = "form-group">
-                  <input type="email" class="form-control" placeholder="Email" name="Email">
+                  <input type="email" class="form-control" placeholder="Email" id="Email">
                 </div>
-            </form>
-          </body>
-          <body>
-            <form>
                 <div class = "form-group">
-                  <input type="text" class="form-control" placeholder="Password" name="Password">
+                  <input type="password" class="form-control" placeholder="Password" id="Password">
                 </div>
-            </form>
-          </body>
-          <body>
-            <form>
                 <div class = "form-group">
-                  <input type="text" class="form-control" placeholder="Confirm Password" name="PasswordConf">
+                  <input type="password" class="form-control" placeholder="Confirm Password" id="PasswordConf">
                 </div>
-            </form>
-          </body>
-          <!--<input type="submit" class="btn btn-secondary btn-block" value="Submit" name="">-->
+              <input type = "submit" value = "Create Account" class ="btn btn-secondary btn-block"/>
+        </form>
         </div>
+
         </div>
       </div>
     </div>
+
 
     <br/>
 
@@ -147,6 +145,45 @@
     <!-- <script src="js/bootstrap.min.js"></script> if you downloaded bootstrap to your computer -->
 
     <!-- Why should JS be put at the bottom of the page? -->
+    <script>
+    function checkPasswords(str1,str2){
+        return (str1.value == str2.value);
+    }
 
+    function signUpValidate(){
+        var name = document.getElementById("Name");
+        var email = document.getElementById("Email");
+        var password = document.getElementById("Password");
+        var passwordConf = document.getElementById("PasswordConf");
+
+        var passwordVal = password.value;
+        var passwordString = passwordVal.toString();
+
+        var passwordConfVal = passwordConf.value;
+        var passwordConfString = passwordConfVal.toString();
+
+        if(name.value.length == 0){
+          alert("Name cannot be blank");
+          return false;
+          }
+
+        if(email.value.length == 0){
+          alert("Email cannot be blank");
+          return false;
+          }
+
+        if(password.value.length < 6){
+          alert("Password must be at least 6 characters");
+          return false;
+          }
+
+        if((passwordString.localeCompare(passwordConfString)) != 0){
+          alert("Passwords do not match");
+          return false;
+          }
+
+        return true;
+    }
+    </script>
   </body>
 </html>

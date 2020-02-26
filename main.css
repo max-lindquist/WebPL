@@ -6,9 +6,13 @@ body {
 }
 form {
     display: inline-block;
-    width: 50%
+    width: 75%
 }
 
 .form-group {
     margin-bottom: 10px;
 }
+
+.btn-secondary{
+    margin-bottom: 20px;
+    }
