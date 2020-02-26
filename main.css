@@ -1,0 +1,14 @@
+
+
+body {
+
+    text-align: center;
+}
+form {
+    display: inline-block;
+    width: 50%
+}
+
+.form-group {
+    margin-bottom: 10px;
+}

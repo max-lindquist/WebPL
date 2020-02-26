@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-
-    <title>Bootstrap example</title>
+    <link rel="stylesheet" href="main.css" />
+    <title>Sign Up</title>
 
   </head>
   <body>
@@ -54,7 +54,7 @@
         (that people view it as "modern" but we may view it as "space-wasting")
     -->
 
-    <div class="jumbotron">
+    <!--<div class="jumbotron">
       <div class="container">
         <h1>One line at a time</h1>
         <p>Brief introduction to your site (a few sentences or phrases)</p>
@@ -64,6 +64,7 @@
 
       </div>
     </div>
+    -->
 
     <!-- Use a grid-like idea for the content layout.
          Grids are rows that contain columns.
@@ -80,42 +81,62 @@
          These three columns will stack on mobile and become 100% width.
          (col-md-x specifies that we are using a medium size column)
     -->
+    <div class = "jumbotron">
+      <div class = "row">
+        <div class = "col-lg">
+          <center class = "signup-title">Make your account!</center>
+        </h3>
+        </div>
+      </div>
+    </div>
 
-    <div class="container">
-      <div class="row">
-        <div class="col-md-4">
-          <h3>Cloud Service</h3>
-          <p>Brief description about the cloud service your company provides.
-             Include some highlights that draw customers' attention.
-          </p>
+    <div class="form-horizontal" >
+      <div class="from-group">
+        <div class="col-lg">
         </div>
-        <div class="col-md-4">
-          <h3>Reverse Engineering</h3>
-          <p>Brief description about the reverse engineering your company provides.
-             Include some highlights that draw customers' attention.
-          </p>
-        </div>
-        <div class="col-md-4">
+        <div class="row-lg">
           <!-- <h3>Crowd Testing</h3>
           <p>Brief description about the crowd testing your company provides.
              Include some highlights that draw customers' attention.
           </p> -->
-          <h3 class="feature-title">Get in Touch!</h3>
-          <div class="form-group">
-            <input type="text" class="form-control" placeholder="Name" name="">
-          </div>
-          <div class="form-group">
-            <input type="email" class="form-control" placeholder="Email Address" name="email">
-          </div>
-          <div class="form-group">
-            <textarea class="form-control" rows="4"></textarea>
-          </div>
-          <input type="submit" class="btn btn-secondary btn-block" value="Send" name="">
+
+          <body>
+            <form>
+                <div class = "form-group">
+                    <input type="text" class="form-control" placeholder="Name" name="Name">
+                </div>
+            </form>
+          </body>
+          <body>
+            <form>
+                <div class = "form-group">
+                  <input type="email" class="form-control" placeholder="Email" name="Email">
+                </div>
+            </form>
+          </body>
+          <body>
+            <form>
+                <div class = "form-group">
+                  <input type="text" class="form-control" placeholder="Password" name="Password">
+                </div>
+            </form>
+          </body>
+          <body>
+            <form>
+                <div class = "form-group">
+                  <input type="text" class="form-control" placeholder="Confirm Password" name="PasswordConf">
+                </div>
+            </form>
+          </body>
+          <!--<input type="submit" class="btn btn-secondary btn-block" value="Submit" name="">-->
+        </div>
         </div>
       </div>
     </div>
 
     <br/>
+
+
 
     <!-- To use bootstrap.min.js, need jquery
          note: js bootstrap allows menu interaction such as dropdown
