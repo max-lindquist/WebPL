@@ -147,28 +147,30 @@
     <script>
     function showPassFunction(){
         var password = document.getElementById("loginPassword");
-        if (password.type === "password"){
-          password.type = "text";
-          }
-          else {
+        if (password.type === "text"){
           password.type = "password";
+          return 0;
           }
 
+        password.type = "text";
+        return 0;
+
+
     }
+
 
     function createShowPassFunction(){
         var password = document.getElementById("Password");
         var passwordconf = document.getElementById("PasswordConf");
-        if (password.type === "password"){
-          password.type = "text";
-          passwordconf.type = "text";
-
-          }
-          else {
+        if (password.type === "text"){
           password.type = "password";
           passwordconf.type = "password";
+          return 0;
           }
 
+        password.type = "text";
+        passwordconf.type = "text";
+        return 0;
     }
 
     function signUpValidate(){
