@@ -13,30 +13,30 @@
   </head>
   <body>
     <header>
-      <nav class="navbar navbar-expand-md bg-dark navbar-dark">
-        <a class="navbar-brand" href="#">Your logo / company name</a>
-
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <!-- The button is hidden on desktop and becomes a dropdown hamburger menu on mobile.
-             The navigation bar is hidden on small screens and
-             replaced by a button in the top right corner (try to re-size this window).
-             Only when the button (hamburger menu) is clicked, the navigation bar will be displayed.  -->
-
-        <div class="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link" href="#">About</a>
-            </li>
-            <li class="nav-item dropdown">
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Contact</a>
-            </li>
-          </ul>
-        </div>
-      </nav>
+      <div>
+        <nav class="navbar navbar-expand-md bg-custom navbar-dark" style="background-color:#0008f7; color:#0008f7">
+          <a class="navbar-brand" href="index.html" style="color:white; font-size: 50px;"><b>fLaSh mE!</b></a>
+  
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <!-- The button is hidden on desktop and becomes a dropdown hamburger menu on mobile.
+               The navigation bar is hidden on small screens and
+               replaced by a button in the top right corner (try to re-size this window).
+               Only when the button (hamburger menu) is clicked, the navigation bar will be displayed.  -->
+  
+          <div class="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="about.html" style="color:white; font-size: 25px;">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="signup.html" style="color:white; font-size: 25px;">Sign up</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
 
     </header>
 
@@ -72,39 +72,19 @@
          These three columns will stack on mobile and become 100% width.
          (col-md-x specifies that we are using a medium size column)
     -->
-    <div class = "jumbotron">
+    <div class = "jumbotron" style="background-color:#ff9d26; padding:0; margin:0">
       <div class = "row">
         <div class = "col-lg">
-          <center class = "signup-title"></center>
         </h3>
         </div>
       </div>
     </div>
-
-    <div class="form-horizontal" >
+    </div>
+    <div class="jumbotron" style="background-color:#ff9d26; margin:0">
+    <div class="form-horizontal" style="display:inline-block; width:50%;">
       <div class="from-group">
-        <div class="row">
-          <div class="col-md-6">
-            <br><br>
-            <h3>Login</h3>
-            <form action="/WebPL!/landing.html" name="LoginForm" method="post">
-                <div class = "form-group">
-                    <input type="email" class="form-control" placeholder="Email" id="loginEmail">
-                </div>
-                <div class = "form-group">
-                  <input type="password" class="form-control" placeholder="Password" id="loginPassword">
-                </div>
-                <div class ="form-check" align="left">
-                  <input type="checkbox" class="form-check-input" id="showPass" onclick="showPassFunction()">
-                  <label class="form-check-label" for="showPass">Show Password</label>
-                </div>
-              <input type = "submit" value = "Login" class ="btn btn-secondary btn-block"/>
-            </form>
-
-          </div>
-
-          <div class="col-md-6">
-          <h3>New? Make an Account</h3>
+          <h3 style="color:white">New? Make an Account!</h3>
+          <br>
           <form action="/WebPL!/landing.html" name="RegisterForm" method="post" onsubmit="return signUpValidate()">
                 <div class = "form-group">
                     <input type="text" class="form-control" placeholder="Name" id="Name">
@@ -122,16 +102,17 @@
                   <input type="checkbox" class="form-check-input" id="createShowPass" onclick="createShowPassFunction()">
                   <label class="form-check-label" for="createShowPass">Show Password</label>
                 </div>
-              <input type = "submit" value = "Create Account" class ="btn btn-secondary btn-block" />
+                &nbsp;
+              <input type = "submit" value = "Create Account" class ="btn btn-secondary btn-block" style="background-color:#0008f7"/>
         </form>
-        </div>
-
-        </div>
       </div>
     </div>
-
-
-    <br/>
+  </div>
+  <footer class="page-footer" style="background-color:#ff9d26">
+    
+  </footer>
+  
+</body>
 
 
 

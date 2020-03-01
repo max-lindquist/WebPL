@@ -48,36 +48,14 @@
 
     <div class="jumbotron" style="background-color: #ff9d26;">
       <div class="container">
-        <h1 style="color:white">fLaSh mE!</h1>
+        <h1 style="color:white">About</h1>
         <h4 style="color:white">An online study tool that'll help you ace whatever you need to ace.</h4>
         &nbsp;
         <p>
-          <a class="btn btn-lg" href="about.html" style="background-color: #0008f7"role="button"><font color="white">Learn more</font></a>
+          <a class="btn btn-lg" href="signup.html" style="background-color: #0008f7"role="button"><font color="white">Sign up!</font></a>
         </p>
       </div>
       <br/>
-      &nbsp;
-      <div>
-        <h3 style="color:white">Log in</font></h3>
-      </div>
-      <br>
-      <div class="form" style="width:50%; display:inline-block">
-        <form action="/WebPL!/landing.html" name="LoginForm" method="post">
-            <div class = "form-group">
-                <input type="email" class="form-control" placeholder="Email" id="loginEmail">
-            </div>
-            <div class = "form-group">
-              <input type="password" class="form-control" placeholder="Password" id="loginPassword">
-            </div>
-            <div class ="form-check" align="left">
-              <input type="checkbox" class="form-check-input" id="showPass" onclick="showPassFunction()">
-              <label class="form-check-label" for="showPass">Show Password</label>
-            </div>
-            &nbsp;
-          <center><input type = "submit" value = "Login" class ="btn btn-secondary btn-block" style="background-color:#0008f7; width:150px"/></center>
-        </form>
-        </div>
-    </div>
 
     <!-- Use a grid-like idea for the content layout.
          Grids are rows that contain columns.
@@ -107,32 +85,5 @@
 
   </body>
   <script>
-        function showPassFunction(){
-        var password = document.getElementById("loginPassword");
-        if (password.type === "text"){
-          password.type = "password";
-          return 0;
-          }
-
-        password.type = "text";
-        return 0;
-
-
-    }
-
-
-    function createShowPassFunction(){
-        var password = document.getElementById("Password");
-        var passwordconf = document.getElementById("PasswordConf");
-        if (password.type === "text"){
-          password.type = "password";
-          passwordconf.type = "password";
-          return 0;
-          }
-
-        password.type = "text";
-        passwordconf.type = "text";
-        return 0;
-    }
   </script>
 </html>
