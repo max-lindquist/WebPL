@@ -16,7 +16,7 @@
       <header>
         <div>
       <nav class="navbar navbar-expand-md bg-custom navbar-dark" style="background-color:#0008f7; color:#0008f7">
-        <a class="navbar-brand" href="index.html" style="color:white; font-size: 50px;"><b></b></a>
+          <a class="navbar-brand" href="index.html" style="color:white; font-size: 50px;"><b>fLaSh mE!</b></a>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
           <span class="navbar-toggler-icon"></span>
@@ -54,42 +54,19 @@
           </center>
     </div>
 
+
     <div class="row">
-        <div class="col-lg-8">
-            <h2>  Add a class</h2>
-            <p>
-                <a href="#" class="btn btn-squared-default-plain btn-primary"style="margin-left: 50px; margin-right:20px"onclick="newClass(button1)">
-
-                    <br />
-                    primary
-                    <br />
-                    Button
-                </a>
-              <a href="#" class="btn btn-squared-default-plain btn-primary"style="background: white; margin-right:20px" id="button1">
-                    <i class="fa fa-android fa-5x"></i>
-                    <br />
-                    Class
-                    <br />
-                    Numba1
-                </a>
-              <a href="#" class="btn btn-squared-default-plain btn-primary"style="background: white; margin-right:20px" id="button2">
-                    <i class="fa fa-android fa-5x"></i>
-                    <br />
-                    Class
-                    <br />
-                    Numba2
-                </a>
-              <a href="#" class="btn btn-squared-default-plain btn-primary"style="background: white; margin-right:20px" id="button3">
-                    <i class="fa fa-android fa-5x"></i>
-                    <br />
-                    Class
-                    <br />
-                    Numba3
-                </a>
-              </p>
-        </div>
-
+        <div class="col-md-12">
+            <h2 style="margin-left:55px">Add a class</h2>
+              <button type="button" class="btn btn-primary btn-lg" style="height:150px;width:150px; margin-left:60px; " onclick="return newClass()">Primary Button</button>
+              <button type="button" class="btn btn-primary btn-lg" style="background: white;height:150px;width:150px; margin-left:60px" id="button1">Class 1</button>
+              <button type="button" class="btn btn-primary btn-lg" style="background: white;height:150px;width:150px; margin-left:60px" id="button2">Class 2</button>
+              <button type="button" class="btn btn-primary btn-lg" style="background: white;height:150px;width:150px; margin-left:60px" id="button3">Class 3</button>
+              <button type="button" class="btn btn-primary btn-lg" style="background: white;height:150px;width:150px; margin-left:60px" id="button4">Class 4</button>
+              <button type="button" class="btn btn-primary btn-lg" style="background: white;height:150px;width:150px; margin-left:60px" id="button5">Class 5</button>
+              <button type="button" class="btn btn-primary btn-lg" style="background: white;height:150px;width:150px; margin-left:60px" id="button6">Class 6</button>
     </div>
+
 </div>
 
 
@@ -104,6 +81,11 @@
        var class1 = document.getElementById("button1");
        var class2 = document.getElementById("button2");
        var class3 = document.getElementById("button3");
+       var class4 = document.getElementById("button4");
+       var class5 = document.getElementById("button5");
+       var class6 = document.getElementById("button6");
+
+
 
        if (class1.style.background === "white"){
        class1.style.background = "blue";
@@ -117,6 +99,21 @@
 
        if (class3.style.background === "white"){
        class3.style.background = "blue";
+       return 0;
+       }
+
+       if (class4.style.background === "white"){
+       class4.style.background = "blue";
+       return 0;
+       }
+
+       if (class5.style.background === "white"){
+       class5.style.background = "blue";
+       return 0;
+       }
+
+       if (class6.style.background === "white"){
+       class6.style.background = "blue";
        return 0;
        }
 
