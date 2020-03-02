@@ -54,21 +54,73 @@
           </center>
     </div>
 
-
+<div class = "container" style="margin-top:75px">
     <div class="row">
-        <div class="col-md-12">
-            <h2 style="margin-left:55px">Add a class</h2>
-              <button type="button" class="btn btn-primary btn-lg" style="height:150px;width:150px; margin-left:60px; " onclick="return newClass()">Primary Button</button>
-              <button type="button" class="btn btn-primary btn-lg" style="background: white;height:150px;width:150px; margin-left:60px" id="button1">Class 1</button>
-              <button type="button" class="btn btn-primary btn-lg" style="background: white;height:150px;width:150px; margin-left:60px" id="button2">Class 2</button>
-              <button type="button" class="btn btn-primary btn-lg" style="background: white;height:150px;width:150px; margin-left:60px" id="button3">Class 3</button>
-              <button type="button" class="btn btn-primary btn-lg" style="background: white;height:150px;width:150px; margin-left:60px" id="button4">Class 4</button>
-              <button type="button" class="btn btn-primary btn-lg" style="background: white;height:150px;width:150px; margin-left:60px" id="button5">Class 5</button>
-              <button type="button" class="btn btn-primary btn-lg" style="background: white;height:150px;width:150px; margin-left:60px" id="button6">Class 6</button>
-    </div>
+
+
+      <div class="col-md-2">
+        <div class="text-center">
+              <button type="button" class="btn btn-primary btn-lg" style="height:150px;width:150px;" onclick="return newClass()">Add a Class</button>
+          </div>
+      </div>
+
+      <div class="col-md-2">
+        <div class="text-center">
+        <button type="button" class="btn btn-primary btn-lg" style="background: white;height:150px;width:150px;" id="button1">Class 1</button>
+        <div>
+
+          <button type="button" class="btn btn-light" style="width:75px; visibility:hidden" id="edit1">Edit</button>
+          <button type="button" class="btn btn-danger" style="width:75px; visibility:hidden" id="delete1" onclick="return deleteClass1()">Delete</button>
+        </div>
+        </div>
+      </div>
+
+      <div class="col-md-2">
+        <div class="text-center">
+        <button type="button" class="btn btn-primary btn-lg" style="background: white;height:150px;width:150px;" id="button2">Class 2</button>
+        <div>
+
+          <button type="button" class="btn btn-light" style="width:75px;visibility:hidden" id="edit2">Edit</button>
+          <button type="button" class="btn btn-danger" style="width:75px; visibility:hidden" id="delete2" onclick="return deleteClass2()">Delete</button>
+        </div>
+        </div>
+      </div>
+
+      <div class="col-md-2">
+        <div class="text-center">
+        <button type="button" class="btn btn-primary btn-lg" style="background: white;height:150px;width:150px;" id="button3">Class 3</button>
+        <div>
+
+          <button type="button" class="btn btn-light" style="width:75px;visibility:hidden" id="edit3">Edit</button>
+          <button type="button" class="btn btn-danger" style="width:75px; visibility:hidden" id="delete3" onclick="return deleteClass3()">Delete</button>
+        </div>
+        </div>
+      </div>
+
+      <div class="col-md-2">
+        <div class="text-center">
+        <button type="button" class="btn btn-primary btn-lg" style="background: white;height:150px;width:150px;" id="button4">Class 4</button>
+        <div>
+
+          <button type="button" class="btn btn-light" style="width:75px;visibility:hidden" id="edit4">Edit</button>
+          <button type="button" class="btn btn-danger" style="width:75px; visibility:hidden" id="delete4" onclick="return deleteClass4()">Delete</button>
+        </div>
+        </div>
+      </div>
+
+      <div class="col-md-2">
+        <div class="text-center">
+        <button type="button" class="btn btn-primary btn-lg" style="background: white;height:150px;width:150px;" id="button5">Class 5</button>
+        <div>
+
+          <button type="button" class="btn btn-light" style="width:75px;visibility:hidden" id="edit5">Edit</button>
+          <button type="button" class="btn btn-danger" style="width:75px; visibility:hidden" id="delete5" onclick="return deleteClass5()">Delete</button>
+        </div>
+        </div>
+      </div>
 
 </div>
-
+</div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
@@ -85,40 +137,110 @@
        var class5 = document.getElementById("button5");
        var class6 = document.getElementById("button6");
 
+       var edit1 = document.getElementById("edit1");
+       var delete1 = document.getElementById("delete1");
 
+       var edit2 = document.getElementById("edit2");
+       var delete2 = document.getElementById("delete2");
+
+       var edit3 = document.getElementById("edit3");
+       var delete3 = document.getElementById("delete3");
+
+       var edit4 = document.getElementById("edit4");
+       var delete4 = document.getElementById("delete4");
+
+       var edit5 = document.getElementById("edit5");
+       var delete5 = document.getElementById("delete5");
 
        if (class1.style.background === "white"){
        class1.style.background = "blue";
+       edit1.style.visibility = "visible";
+       delete1.style.visibility = "visible";
        return 0;
        }
 
        if (class2.style.background === "white"){
        class2.style.background = "blue";
+       edit2.style.visibility = "visible";
+       delete2.style.visibility = "visible";
        return 0;
        }
 
        if (class3.style.background === "white"){
        class3.style.background = "blue";
+       edit3.style.visibility = "visible";
+       delete3.style.visibility = "visible";
        return 0;
        }
 
        if (class4.style.background === "white"){
        class4.style.background = "blue";
+       edit4.style.visibility = "visible";
+       delete4.style.visibility = "visible";
        return 0;
        }
 
        if (class5.style.background === "white"){
        class5.style.background = "blue";
+       edit5.style.visibility = "visible";
+       delete5.style.visibility = "visible";
        return 0;
        }
 
-       if (class6.style.background === "white"){
-       class6.style.background = "blue";
        return 0;
        }
 
-       return 0;
-       }
+     function deleteClass1(){
+        var class1 = document.getElementById("button1");
+        var edit1 = document.getElementById("edit1");
+        var delete1 = document.getElementById("delete1");
+
+        class1.style.background = "white";
+        edit1.style.visibility = "hidden";
+        delete1.style.visibility = "hidden";
+        }
+
+     function deleteClass2(){
+        var class2 = document.getElementById("button2");
+        var edit2 = document.getElementById("edit2");
+        var delete2 = document.getElementById("delete2");
+
+        class2.style.background = "white";
+        edit2.style.visibility = "hidden";
+        delete2.style.visibility = "hidden";
+        }
+
+     function deleteClass3(){
+        var class3 = document.getElementById("button3");
+        var edit3 = document.getElementById("edit3");
+        var delete3 = document.getElementById("delete3");
+
+        class3.style.background = "white";
+        edit3.style.visibility = "hidden";
+        delete3.style.visibility = "hidden";
+        }
+
+     function deleteClass4(){
+        var class4 = document.getElementById("button4");
+        var edit4 = document.getElementById("edit4");
+        var delete4 = document.getElementById("delete4");
+
+        class4.style.background = "white";
+        edit4.style.visibility = "hidden";
+        delete4.style.visibility = "hidden";
+        }
+
+     function deleteClass5(){
+        var class5 = document.getElementById("button5");
+        var edit5 = document.getElementById("edit5");
+        var delete5 = document.getElementById("delete5");
+
+        class5.style.background = "white";
+        edit5.style.visibility = "hidden";
+        delete5.style.visibility = "hidden";
+        }
+
+
      </script>
         </body>
 </html>
