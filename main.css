@@ -25,3 +25,14 @@ form {
     height:200px;
     width:200px;
 }
+
+.thumbnail {
+    position: relative;
+}
+
+.caption {
+    position: absolute;
+    top: 45%;
+    left: 0;
+    width: 100%;
+}
