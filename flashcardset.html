@@ -46,20 +46,21 @@
         <div class ="row">
         <div class="col-md-2">
           <div class="text-center" style="text-align:center">
-              <img src="images/flashcard.png" style="text-align:center; margin-bottom:25px; margin-top:25px; width:150px; border:1px solid black";alt="" class="img-responsive">
-            <div class="carousel-caption">
-              <a href="flashcard.html"  style="margin-bottom:25px; text-align:center; font-family: impact; color:black; font-size:20px;">
+              <img src="images/flashcard.png" style="text-align:center; margin-top:25px; width:150px; border:1px solid black";alt="" class="img-responsive">
+            <div class="carousel-caption" style="text-align:center">
+              <a href="flashcard.html"  style="text-align:center; font-family: impact; color:black; font-size:20px;" onclick="rightClick()">
                 <p >Set 1</p>
               </a>
               </div>
+
           </div>
           </div>
           <div class="col-md-2">
-          <div class="text-center" style="text-align:center">
+          <div class="text-center" style="text-align:center" id="card2">
               <img src="images/flashcard.png" style="text-align:center; margin-bottom:25px; margin-top:25px; width:150px; border:1px solid black";alt="" class="img-responsive">
             <div class="carousel-caption">
               <a href="flashcard.html"  style="margin-bottom:25px; text-align:center; font-family: impact; color:black; font-size:20px;">
-                <p >Set 2</p>
+                <p id="label2">Set 2</p>
               </a>
               </div>
           </div>
@@ -288,9 +289,8 @@
               <img src="images/flashcard.png" style="text-align:center; margin-bottom:25px; margin-top:25px; width:150px; border:1px solid black";alt="" class="img-responsive">
               <div class="carousel-caption">
                 <a href="flashcard.html"  style="margin-bottom:25px; text-align:center; font-family: impact; color:black; font-size:20px;">
-                  <p >Set 23</p>
+                  <p>Set 23</p>
                 </a>
-
               </div>
             </div>
           </div>
@@ -315,5 +315,15 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
 
+    <script>
+      card2 = document.getElementById("card2");
+      label2 = document.getElementById("label2");
+
+      card2.addEventListener("contextmenu", e => {
+      e.preventDefault();
+      var newText = prompt("Enter a new set name","Set 2");
+      label2.innerHTML = newText;
+      });
+    </script>
   </body>
 </html>
