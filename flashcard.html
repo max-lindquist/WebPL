@@ -20,7 +20,7 @@
     </style>
 
   </head>
-  <body style="background-color:#ff9d26">
+  <body style="background-color:#ff9d26;" >
     <header>
       <div>
         <nav class="navbar navbar-expand-md bg-custom navbar-dark" style="background-color:#0008f7; color:#0008f7">
@@ -60,7 +60,7 @@
     <div class="jumbotron" style="background-color: #ff9d26;">
       <div class="container">
         <h1 style="color:white">CS 4640 Study Set</h1>
-        
+        &nbsp;
       <!-- 4. use bootstrap form layouts
               Bootstrap provides three types of form layouts: 
                 - verical form (default)
@@ -89,20 +89,17 @@
         <!-- <form name="mainform" action="" method="get"> -->
           <form class="form-inline" action="">
             <div class = "row">
-              <div class = "col-md-4">
                 <div class="form-group">
-                  <label for="term" style="color:white">Term</label>
-                  <input type="text" id="term" class="form-control" name="term" style="width:1600px"/>
+                  <label for="term" style="color:white">Term: &nbsp</label>
+                  &nbsp;
+                  <input type="text" id="term" class="form-control" name="term" style="width:500px"/>
                   <span class="error" id="term-note"></span> 
-                </div>  
-              </div>
-              <div class = "col-md-4">
-                <div class="form-group">
-                  <label for="definition" style="color:white">Definition</label>
-                  <input type="text" id="definition" class="form-control" name="definition" style="width:1600px" />
+                  &nbsp;
+                  <label for="definition" style="color:white">&nbsp&nbspDefinition: &nbsp </label>
+                  &nbsp;
+                  <input type="text" id="definition" class="form-control" name="definition" style="width:500px" />
                   <span class="error" id="definition-note"></span>  
                 </div>
-              </div>
             </div>
             <br>
           </form>
