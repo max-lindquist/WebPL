@@ -1,6 +1,4 @@
 
-<!-- Shannon Chu (slc8jz), Max Lindquist (mrl2dj), Jerome Romualdez (jhr3kd) -->
-
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/html">
   <head>
@@ -133,9 +131,7 @@
     }
 
     function signUpValidate(){
-        var first_name = document.getElementById("FirstName");
-        var last_name = document.getElementById("LastName");
-        var user_name = document.getElementById("Username");
+        var name = document.getElementById("Name");
         var email = document.getElementById("Email");
         var password = document.getElementById("Password");
         var passwordConf = document.getElementById("PasswordConf");
@@ -146,16 +142,8 @@
         var passwordConfVal = passwordConf.value;
         var passwordConfString = passwordConfVal.toString();
 
-        if(first_name.value.length == 0){
-          alert("First Name cannot be blank");
-          return false;
-          }
-           if(last_name.value.length == 0){
-          alert("Last Name cannot be blank");
-          return false;
-          }
-           if(user_name.value.length == 0){
-          alert("Username cannot be blank");
+        if(name.value.length == 0){
+          alert("Name cannot be blank");
           return false;
           }
 
