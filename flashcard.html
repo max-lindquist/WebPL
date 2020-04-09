@@ -1,4 +1,6 @@
 
+<!-- Shannon Chu (slc8jz), Max Lindquist (mrl2dj), Jerome Romualdez (jhr3kd) -->
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -87,22 +89,25 @@
          -->
          
         <!-- <form name="mainform" action="" method="get"> -->
+        <center>
+        <form name = "">
           <form class="form-inline" action="">
-            <div class = "row">
-                <div class="form-group">
-                  <label for="term" style="color:white">Term: &nbsp</label>
-                  &nbsp;
-                  <input type="text" id="term" class="form-control" name="term" style="width:500px"/>
-                  <span class="error" id="term-note"></span> 
-                  &nbsp;
-                  <label for="definition" style="color:white">&nbsp&nbspDefinition: &nbsp </label>
-                  &nbsp;
-                  <input type="text" id="definition" class="form-control" name="definition" style="width:500px" />
-                  <span class="error" id="definition-note"></span>  
-                </div>
-            </div>
-            <br>
+              <div class="form-group">
+                <label for="term" style="color:white">Term</label>
+                &nbsp;
+                <input type="text" id="term" class="form-control" name="term" style="width:70%"/>
+                <span class="error" id="term-note"></span> 
+              </div>
+              <div class="form-group">
+                <label for="definition" style="color:white">Definition</label>
+                &nbsp;
+                <input type="text" id="definition" class="form-control" name="definition" style="width:70%" />
+                <span class="error" id="definition-note"></span>  
+              </div>
           </form>
+        </form>
+        </center>
+        &nbsp;
           <div class="buttonHolder">
             <input type="button" class="btn btn-light" style="background-color: #0008f7; color:white; border:black" id="add" value="Add flashcard" onclick="addRow()"/>
           </div>
@@ -228,18 +233,18 @@
      document.getElementById("demo").innerHTML = location.href;
   }
   
-  function ChangeFieldByName(by, str) 
-  {
-     document.mainform.desc.value = str + " (access element by " + by.getAttribute("data-change-by") + ")";
-  }   
-  function ChangeFieldById(by, str) 
-  {
-     document.getElementById("taskdesc").value = str + " (access element by " + by.getAttribute("data-change-by") + ")";  	 
-  }
-  function ChangeFieldByPosition(by, str) 
-  {
-     document.forms[0].elements[0].value = str + " (access element by " + by.getAttribute("data-change-by") + ")";  	 
-  }     
+  // function ChangeFieldByName(by, str) 
+  // {
+  //    document.mainform.desc.value = str + " (access element by " + by.getAttribute("data-change-by") + ")";
+  // }   
+  // function ChangeFieldById(by, str) 
+  // {
+  //    document.getElementById("taskdesc").value = str + " (access element by " + by.getAttribute("data-change-by") + ")";  	 
+  // }
+  // function ChangeFieldByPosition(by, str) 
+  // {
+  //    document.forms[0].elements[0].value = str + " (access element by " + by.getAttribute("data-change-by") + ")";  	 
+  // }     
   
   // add event listener to the element 
   // when this element gets focus, call a validateTaskDesc function 
