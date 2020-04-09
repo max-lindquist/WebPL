@@ -18,15 +18,11 @@
       <div>
         <nav class="navbar navbar-expand-md bg-custom navbar-dark" style="background-color:#0052cc; color:#0052cc">
           <a class="navbar-brand" href="index.html" style="color:white; font-size: 50px;"><b>fLaSh mE!</b></a>
-  
+
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
             <span class="navbar-toggler-icon"></span>
           </button>
-          <!-- The button is hidden on desktop and becomes a dropdown hamburger menu on mobile.
-               The navigation bar is hidden on small screens and
-               replaced by a button in the top right corner (try to re-size this window).
-               Only when the button (hamburger menu) is clicked, the navigation bar will be displayed.  -->
-  
+
           <div class="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">
             <ul class="navbar-nav">
               <li class="nav-item">
@@ -41,23 +37,6 @@
       </div>
 
     </header>
-
-    <!--
-        Bootstrap jumbotron header is one big, attention-grabbing header
-        (that people view it as "modern" but we may view it as "space-wasting")
-    -->
-
-    <!--<div class="jumbotron">
-      <div class="container">
-        <h1>One line at a time</h1>
-        <p>Brief introduction to your site (a few sentences or phrases)</p>
-        <p>
-          <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
-        </p>
-
-      </div>
-    </div>
-    -->
 
     <!-- Use a grid-like idea for the content layout.
          Grids are rows that contain columns.
@@ -87,21 +66,15 @@
       <div class="from-group">
           <h3 style="color:black">New? Make an Account!</h3>
           <br>
-          <form action="landing.html" name="RegisterForm" method="post" onsubmit="return signUpValidate()">
+          <form action="<?php $_SERVER['PHP_SELF'] ?>" method="post" onsubmit="return signUpValidate()">
                 <div class = "form-group">
-                    <input type="text" class="form-control" placeholder="First Name" id="FirstName">
+                    <input type="text" class="form-control" placeholder="Name" name = "Name" id="Name">
                 </div>
                 <div class = "form-group">
-                    <input type="text" class="form-control" placeholder="Last Name" id="LastName">
+                  <input type="email" class="form-control" placeholder="Email" name = "Email" id="Email">
                 </div>
                 <div class = "form-group">
-                    <input type="text" class="form-control" placeholder="Username" id="Username">
-                </div>
-                <div class = "form-group">
-                  <input type="email" class="form-control" placeholder="Email" id="Email">
-                </div>
-                <div class = "form-group">
-                  <input type="password" class="form-control" placeholder="Password" id="Password">
+                  <input type="password" class="form-control" placeholder="Password" name = "Password" id="Password">
                 </div>
                 <div class = "form-group">
                   <input type="password" class="form-control" placeholder="Confirm Password" id="PasswordConf">
@@ -111,18 +84,14 @@
                   <label class="form-check-label" for="createShowPass">Show Password</label>
                 </div>
                 &nbsp;
-
-              <input type = "submit" value = "Create Account" class ="btn btn-secondary btn-block" style="background-color:#0008f7"/>
+              <input type = "submit" name = "btnaction" value = "Create Account" class ="btn btn-secondary btn-block" style="background-color:#0008f7"/>
         </form>
       </div>
     </div>
   </div>
   <footer class="page-footer" style="background-color:#ff9d26">
-    
-  </footer>
-  
-</body>
 
+  </footer>
 
 
     <!-- To use bootstrap.min.js, need jquery
@@ -205,8 +174,10 @@
           return false;
           }
 
+
         return True;
     }
     </script>
+
   </body>
 </html>
