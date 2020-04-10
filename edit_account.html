@@ -1,4 +1,6 @@
 
+<!-- Shannon Chu (slc8jz), Max Lindquist (mrl2dj), Jerome Romualdez (jhr3kd) -->
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -45,18 +47,42 @@
   <div class="container" align = "middle">
         <br/>
         <h1 style="color:white">Edit Your Information </h1>
-      <div  class ="container "align="left" style="border: 1px solid gray; background-color: white; width:700px; height:420px;" >
+      <div  class ="container "align="left" style="border: 1px solid gray; background-color: white; width:100%; height:620px;" >
           <br/>
-          <h5>Username </h5>
-          <input value="&nbsp &nbsp mwski99" style="color:gray; width:300px"> </input>
-          <h5>First Name </h5>
-          <input value="&nbsp &nbsp Mike" style="color:gray; width:300px"></input>
-          <h5>Last Name </h5>
-          <input value="&nbsp &nbsp Wazowski" style="color:gray; width:300px"></input>
-          <h5>Email </h5>
-          <input value="&nbsp &nbsp mwski99@monster.com" style="color:gray; width:300px"></input>
-          <h5>Password </h5>
-          <input value="&nbsp &nbsp ********" style="color:gray; width:300px"></input>
+          <form action="landing.html" name="RegisterForm" method="post" onsubmit="return signUpValidate()">
+                <div class = "form-group">
+                    <h5>First Name </h5>
+                    <input type="text" class="form-control" value="Mike" id="FirstName">
+                </div>
+                <div class = "form-group">
+                    <h5>Last Name </h5>
+                    <input type="text" class="form-control" value="Wazowksi" id="LastName">
+                </div>
+                <div class = "form-group">
+                    <h5>Username </h5>
+                    <input type="text" class="form-control" value="mwski99" id="Username">
+                </div>
+                <div class = "form-group">
+                    <h5>Email </h5>
+                  <input type="email" class="form-control" value="mwski99@monster.com" id="Email">
+                </div>
+                <div class = "form-group">
+                    <h5>Password </h5>
+                  <input type="password" class="form-control" value="123456" id="Password">
+                </div>
+              <div class = "form-group">
+                  <input type="password" class="form-control" value="123456" placeholder="Confirm Password" id="PasswordConf">
+                </div>
+                <div class ="form-check" align="left">
+                  <input type="checkbox" class="form-check-input" id="createShowPass" onclick="pass()">
+                  <label class="form-check-label" for="createShowPass">Show Password</label>
+                </div>
+              <br>
+              <input type = "submit" value = "Confirm Changes" class ="btn btn-secondary btn-lg" style="background-color:#0008f7"/>
+              <!-- <a  class="btn btn-primary btn-lg" href="account.html" role="button" style="background-color:red">Cancel</a>-->
+              <a href="account.html" style="color:red">Cancel</a>
+          </form>
+
           <br>
       </div>
     </div>
@@ -64,22 +90,88 @@
 
 
 
-
-
-
-
-
       <br/>
 
 
-      <center>
-           <a class="btn btn-primary btn-lg" href="account.html" role="button" style="background-color:red">Cancel</a>
-          <a class="btn btn-primary btn-lg" href="account.html" role="button" style="background-color:#0008f7">Confirm Changes</a>
-      </center>
+
   </div>
 
 
+<script>
 
+       function showPassFunction(){
+        var password = document.getElementById("loginPassword");
+        if (password.type === "text"){
+          password.type = "password";
+          return 0;
+          }
+
+        password.type = "text";
+        return 0;
+
+
+    }
+
+
+    var pass = function(){
+        var password = document.getElementById("Password");
+        var passwordconf = document.getElementById("PasswordConf");
+        if (password.type === "text"){
+          password.type = "password";
+          passwordconf.type = "password";
+          return 0;
+          }
+
+        password.type = "text";
+        passwordconf.type = "text";
+        return 0;
+    }
+
+    function signUpValidate(){
+        var first_name = document.getElementById("FirstName");
+        var last_name = document.getElementById("LastName");
+        var user_name = document.getElementById("Username");
+        var email = document.getElementById("Email");
+        var password = document.getElementById("Password");
+        var passwordConf = document.getElementById("PasswordConf");
+
+        var passwordVal = password.value;
+        var passwordString = passwordVal.toString();
+
+        var passwordConfVal = passwordConf.value;
+        var passwordConfString = passwordConfVal.toString();
+
+        if(first_name.value.length == 0){
+          alert("First Name cannot be blank");
+          return false;
+          }
+           if(last_name.value.length == 0){
+          alert("Last Name cannot be blank");
+          return false;
+          }
+           if(user_name.value.length == 0){
+          alert("Username cannot be blank");
+          return false;
+          }
+
+        if(email.value.length == 0){
+          alert("Email cannot be blank");
+          return false;
+          }
+
+        if(password.value.length < 6){
+          alert("Password must be at least 6 characters");
+          return false;
+          }
+
+        if((passwordString.localeCompare(passwordConfString)) != 0){
+          alert("Passwords do not match");
+          return false;
+          }
+
+        return True;
+    }
+</script>
 
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
