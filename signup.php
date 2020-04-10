@@ -45,7 +45,12 @@
     $statement->bindValue(':password', $password);
     $statement->execute();
     $statement->closeCursor();
-    echo("<script>location.href = 'landing.html';</script>");
+
+    $_SESSION['name'] = $name;
+    $_SESSION['email'] = $email;
+    $_SESSION['password'] = $password;
+
+    echo("<script>location.href = 'landing.php';</script>");
     }
 
   }
