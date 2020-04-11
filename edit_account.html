@@ -100,10 +100,8 @@
           password.type = "password";
           return 0;
           }
-
         password.type = "text";
         return 0;
-
 
     }
 
@@ -123,9 +121,7 @@
     }
 
     function signUpValidate(){
-        var first_name = document.getElementById("FirstName");
-        var last_name = document.getElementById("LastName");
-        var user_name = document.getElementById("Username");
+        var first_name = document.getElementById("Name");
         var email = document.getElementById("Email");
         var password = document.getElementById("Password");
         var passwordConf = document.getElementById("PasswordConf");
@@ -138,14 +134,6 @@
 
         if(first_name.value.length == 0){
           alert("First Name cannot be blank");
-          return false;
-          }
-           if(last_name.value.length == 0){
-          alert("Last Name cannot be blank");
-          return false;
-          }
-           if(user_name.value.length == 0){
-          alert("Username cannot be blank");
           return false;
           }
 
@@ -169,7 +157,6 @@
 
  function editEmail(){
    alert("Cannot change email!");
-
 
 }
 </script>
