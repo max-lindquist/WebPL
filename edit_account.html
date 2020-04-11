@@ -50,31 +50,23 @@
   <div class="container" align = "middle">
         <br/>
         <h1 style="color:white">Edit Your Information </h1>
-      <div  class ="container "align="left" style="border: 1px solid gray; background-color: white; width:100%; height:620px;" >
+      <div  class ="container "align="left" style="border: 1px solid gray; background-color: white; width:100%; height:500px;" >
           <br/>
-          <form action="landing.html" name="RegisterForm" method="post" onsubmit="return signUpValidate()">
+          <form action="<?php $_SERVER['PHP_SELF'] ?>" name="RegisterForm" method="post" onsubmit="return signUpValidate()">
                 <div class = "form-group">
-                    <h5>First Name </h5>
-                    <input type="text" class="form-control" value="Mike" id="FirstName">
-                </div>
-                <div class = "form-group">
-                    <h5>Last Name </h5>
-                    <input type="text" class="form-control" value="Wazowksi" id="LastName">
-                </div>
-                <div class = "form-group">
-                    <h5>Username </h5>
-                    <input type="text" class="form-control" value="mwski99" id="Username">
+                    <h5>Name </h5>
+                     <input type="text" class="form-control" value="<?php echo $_SESSION['name'] ?>" name = "Name" id="Name">
                 </div>
                 <div class = "form-group">
                     <h5>Email </h5>
-                  <input type="email" class="form-control" value="mwski99@monster.com" id="Email">
+                  <input type="email" class="form-control" value="<?php echo $_SESSION['email'] ?>" name = "Email" id="Email" onclick="editEmail()" readonly>
                 </div>
                 <div class = "form-group">
                     <h5>Password </h5>
-                  <input type="password" class="form-control" value="123456" id="Password">
+                  <input type="password" class="form-control" value="<?php echo $_SESSION['password'] ?>" name = "Password" id="Password">
                 </div>
               <div class = "form-group">
-                  <input type="password" class="form-control" value="123456" placeholder="Confirm Password" id="PasswordConf">
+                  <input type="password" class="form-control" value="<?php echo $_SESSION['password'] ?>" id="PasswordConf">
                 </div>
                 <div class ="form-check" align="left">
                   <input type="checkbox" class="form-check-input" id="createShowPass" onclick="pass()">
@@ -174,6 +166,12 @@
 
         return True;
     }
+
+ function editEmail(){
+   alert("Cannot change email!");
+
+
+}
 </script>
 
 
