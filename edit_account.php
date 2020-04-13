@@ -24,7 +24,7 @@ if (!isset($_SESSION['session_user_id'])) {
   <body style="background-color:#ff9d26">
     <header>
       <nav class="navbar navbar-expand-md bg-custom navbar-dark" style="background-color:#0052cc; color:#0052cc">
-        <a class="navbar-brand" href="landing.html" style="color:white; font-size: 50px;"><b>fLaSh mE!</b></a>
+        <a class="navbar-brand" href="landing.php" style="color:white; font-size: 50px;"><b>fLaSh mE!</b></a>
 
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
         <span class="navbar-toggler-icon"></span>
@@ -53,6 +53,20 @@ if (!isset($_SESSION['session_user_id'])) {
     </nav>
 
     </header>
+  
+  <?php
+  require('flashme-connectdb.php');
+  $user_id = $_SESSION['session_user_id'];
+  $query = "SELECT * FROM user_info WHERE user_id=$user_id";
+  $result = $db->query($query);
+  //echo "num_rows=$num_rows\n";
+    // output data of each row
+  while($row = $result->fetch(PDO::FETCH_ASSOC)) {
+      $name = $row["name"];
+      $email = $row["email"];
+      $password = $row["password"];
+  }
+  ?>
 
   <div class="jumbotron" style="background-color:#ff9d26">
   <div class="container" align = "middle">
@@ -63,19 +77,19 @@ if (!isset($_SESSION['session_user_id'])) {
           <form action="edit_account_update.php" name="RegisterForm" method="POST" onsubmit="return signUpValidate()">
                 <div class = "form-group">
                     <h5>Name </h5>
-                     <input type="text" class="form-control" value="<?php echo $_SESSION['session_name'] ?>" name = "Name" id="Name">
+                     <input type="text" class="form-control" value="<?php echo $name ?>" name = "Name" id="Name">
                 </div>
                 <div class = "form-group">
                     <h5>Email </h5>
-                  <input type="email" class="form-control" value="<?php echo $_SESSION['email'] ?>" name = "Email" id="Email" onclick="editEmail()" readonly>
+                  <input type="email" class="form-control" value="<?php echo $email ?>" name = "Email" id="Email" onclick="editEmail()" readonly>
                 </div>
                 <div class = "form-group">
                     <h5>Password </h5>
-                  <input type="password" class="form-control" value="<?php echo $_SESSION['password'] ?>" name = "Password" id="Password">
+                  <input type="password" class="form-control" value="<?php echo $password ?>" name = "Password" id="Password">
                 </div>
               <div class = "form-group">
                   <h5>Confirm Password</h5>
-                  <input type="password" class="form-control" value="<?php echo $_SESSION['password'] ?>" id="PasswordConf">
+                  <input type="password" class="form-control" value="<?php echo $password ?>" id="PasswordConf">
                 </div>
                 <div class ="form-check" align="left">
                   <input type="checkbox" class="form-check-input" id="createShowPass" onclick="pass()">

@@ -104,7 +104,7 @@ if ($num_rows > 0) {
     <header>
       <div>
         <nav class="navbar navbar-expand-md bg-custom navbar-dark" style="background-color:#0052cc; color:#37609e">
-          <a class="navbar-brand" href="index.html" style="color:white; font-size: 50px;"><b>fLaSh mE!</b></a>
+          <a class="navbar-brand" href="landing.php" style="color:white; font-size: 50px;"><b>fLaSh mE!</b></a>
 
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
             <span class="navbar-toggler-icon"></span>
@@ -117,13 +117,13 @@ if ($num_rows > 0) {
           <div class="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">
             <ul class="navbar-nav">
               <li class="nav-item">
-                <a class="nav-link" href="about.html" style="color:white; font-size: 25px;">About</a>
+                <a class="nav-link" href="about_loggedin.php" style="color:white; font-size: 25px;">About</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="landing.html" style="color:white; font-size: 25px;">My Classes</a>
+                <a class="nav-link" href="landing.php" style="color:white; font-size: 25px;">My Classes</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="account.html" style="color:white; font-size: 25px;">My Account</a>
+                <a class="nav-link" href="account.php" style="color:white; font-size: 25px;">My Account</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="logout.php" style="color:white; font-size: 25px;">Logout</a>

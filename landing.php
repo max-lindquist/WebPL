@@ -85,7 +85,7 @@ if (!isset($_SESSION['session_user_id'])) {
     <header>
       <div>
         <nav class="navbar navbar-expand-md bg-custom navbar-dark" style="background-color:#0052cc; color:#0052cc">
-          <a class="navbar-brand" href="landing.html" style="color:white; font-size: 50px;"><b>fLaSh mE!</b></a>
+          <a class="navbar-brand" href="landing.php" style="color:white; font-size: 50px;"><b>fLaSh mE!</b></a>
   
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
           <span class="navbar-toggler-icon"></span>
@@ -98,10 +98,10 @@ if (!isset($_SESSION['session_user_id'])) {
         <div class="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link" href="about_loggedin.html" style="color:white; font-size: 25px;">About</a>
+              <a class="nav-link" href="about_loggedin.php" style="color:white; font-size: 25px;">About</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="landing.html" style="color:white; font-size: 25px;">My Classes</a>
+              <a class="nav-link" href="landing.php" style="color:white; font-size: 25px;">My Classes</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="account.php" style="color:white; font-size: 25px;">My Account</a>
@@ -114,10 +114,24 @@ if (!isset($_SESSION['session_user_id'])) {
         </nav>
       </div>
     </header>
+
+<?php
+require('flashme-connectdb.php');
+$user_id = $_SESSION['session_user_id'];
+$query = "SELECT * FROM user_info WHERE user_id=$user_id";
+$result = $db->query($query);
+//echo "num_rows=$num_rows\n";
+  // output data of each row
+while($row = $result->fetch(PDO::FETCH_ASSOC)) {
+    $name = $row["name"];
+    $email = $row["email"];
+    $password = $row["password"];
+}
+?>
     
     <br><br/>
     <center>
-    <h1 style="color:white"><?php echo $_SESSION['session_name'] ?>'s Classes</h1>
+    <h1 style="color:white"><?php echo $name ?>'s Classes</h1>
     <h5 style="color:white">Create Classes to hold sets of flashcards</h5>
     <br>
     <div class="row-center">
