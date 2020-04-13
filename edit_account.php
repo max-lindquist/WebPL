@@ -97,7 +97,7 @@ if (!isset($_SESSION['session_user_id'])) {
               <br>
               <input type = "submit" value = "Confirm Changes" class ="btn btn-secondary btn-lg" style="background-color:#0008f7"/>
               <!-- <a  class="btn btn-primary btn-lg" href="account.html" role="button" style="background-color:red">Cancel</a>-->
-              <a href="account.html" style="color:red">Cancel</a>
+              <a href="account.php" style="color:red">Cancel</a>
           </form>
 
           <br>
@@ -155,7 +155,7 @@ if (!isset($_SESSION['session_user_id'])) {
         var passwordConfString = passwordConfVal.toString();
 
         if(first_name.value.length == 0){
-          alert("First Name cannot be blank");
+          alert("Name cannot be blank");
           return false;
           }
 

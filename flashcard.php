@@ -141,7 +141,7 @@ if ($num_rows > 0) {
         </center>
         &nbsp;
           <div class="buttonHolder">
-            <input type="button" class="btn btn-light" style="background-color: #0008f7; color:white; border:black" id="add" value="Add flashcard" onclick="addRow()"/>
+            <input type="button" class="btn btn-light" style="width:150px; height:50px; background-color: #0008f7; color:white; border:black; font-size:20px" id="add" value="Add flashcard" onclick="addRow()"/>
           </div>
 
           <br><br/>
@@ -414,7 +414,7 @@ if ($num_rows > 0) {
   
   function delRow(card_id, term)
   {
-    if (confirm("Press OK to delete '" + term + "' (" + card_id + "). This action is unrecoverable.") == true) { 
+    if (confirm("Press OK to delete '" + term + "'. This action is unrecoverable.") == true) { 
       // ajax call
       var xmlhttp = new XMLHttpRequest();
       xmlhttp.onreadystatechange = function() {

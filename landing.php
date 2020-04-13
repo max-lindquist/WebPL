@@ -139,11 +139,11 @@ while($row = $result->fetch(PDO::FETCH_ASSOC)) {
     </div>
     <br>
     <div class="form-popup" id="myForm" style="width:300px; background-color:white; height:250px; padding-top:30px; position:fixed;bottom:325px; right:40%">
-      <form action="landing_add.php" method="POST">
+      <form action="landing_add.php" method="POST" onsubmit="return addValidate()">
         <div class = "form-group">
             <h5>Class name?</h5>
         </div>
-        <input type="text" class="form-control" value="" name="form_class_name" style="width:250px">
+        <input type="text" class="form-control" value="" name="form_class_name" id="form_class_name" style="width:250px">
         <br>
         <input type="submit" value="Add class" class="btn btn-secondary btn-lg" style="background-color:#0008f7"/>
         <br>
@@ -288,167 +288,16 @@ else {
       function closeForm() {
         document.getElementById("myForm").style.display = "none";
       }
+      
+      function addValidate(){
+        var name = document.getElementById("form_class_name");
 
-    //    function newClass(){
-    //    var class1 = document.getElementById("button1");
-    //    var class2 = document.getElementById("button2");
-    //    var class3 = document.getElementById("button3");
-    //    var class4 = document.getElementById("button4");
-    //    var class5 = document.getElementById("button5");
-    //    var class6 = document.getElementById("button6");
+        if(name.value.length == 0){
+          alert("Class name cannot be blank!");
+          return false;
+        }
+      }
 
-    //    var edit1 = document.getElementById("edit1");
-    //    var delete1 = document.getElementById("delete1");
-
-    //    var edit2 = document.getElementById("edit2");
-    //    var delete2 = document.getElementById("delete2");
-
-    //    var edit3 = document.getElementById("edit3");
-    //    var delete3 = document.getElementById("delete3");
-
-    //    var edit4 = document.getElementById("edit4");
-    //    var delete4 = document.getElementById("delete4");
-
-    //    var edit5 = document.getElementById("edit5");
-    //    var delete5 = document.getElementById("delete5");
-
-    //    if (class1.style.background === "white"){
-    //    class1.style.background = "blue";
-    //    edit1.style.visibility = "visible";
-    //    delete1.style.visibility = "visible";
-    //    class1.disabled = false;
-    //    return 0;
-    //    }
-
-    //    if (class2.style.background === "white"){
-    //    class2.style.background = "blue";
-    //    edit2.style.visibility = "visible";
-    //    delete2.style.visibility = "visible";
-    //    class2.disabled = false;
-    //    return 0;
-    //    }
-
-    //    if (class3.style.background === "white"){
-    //    class3.style.background = "blue";
-    //    edit3.style.visibility = "visible";
-    //    delete3.style.visibility = "visible";
-    //    class3.disabled = false;
-    //    return 0;
-    //    }
-
-    //    if (class4.style.background === "white"){
-    //    class4.style.background = "blue";
-    //    edit4.style.visibility = "visible";
-    //    delete4.style.visibility = "visible";
-    //    class4.disabled = false;
-    //    return 0;
-    //    }
-
-    //    if (class5.style.background === "white"){
-    //    class5.style.background = "blue";
-    //    edit5.style.visibility = "visible";
-    //    delete5.style.visibility = "visible";
-    //    class5.disabled = false;
-    //    return 0;
-    //    }
-
-    //    return 0;
-    //    }
-
-    //  function deleteClass1(){
-    //     var class1 = document.getElementById("button1");
-    //     var edit1 = document.getElementById("edit1");
-    //     var delete1 = document.getElementById("delete1");
-
-    //     class1.style.background = "white";
-    //     edit1.style.visibility = "hidden";
-    //     delete1.style.visibility = "hidden";
-    //     class1.disabled = true;
-    //     class1.innerHTML = "Class 1";
-    //     }
-
-    //  function deleteClass2(){
-    //     var class2 = document.getElementById("button2");
-    //     var edit2 = document.getElementById("edit2");
-    //     var delete2 = document.getElementById("delete2");
-
-    //     class2.style.background = "white";
-    //     edit2.style.visibility = "hidden";
-    //     delete2.style.visibility = "hidden";
-    //     class2.disabled = true;
-    //     class2.innerHTML = "Class 2";
-    //     }
-
-    //  function deleteClass3(){
-    //     var class3 = document.getElementById("button3");
-    //     var edit3 = document.getElementById("edit3");
-    //     var delete3 = document.getElementById("delete3");
-
-    //     class3.style.background = "white";
-    //     edit3.style.visibility = "hidden";
-    //     delete3.style.visibility = "hidden";
-    //     class3.disabled = true;
-    //     class3.innerHTML = "Class 3";
-    //     }
-
-    //  function deleteClass4(){
-    //     var class4 = document.getElementById("button4");
-    //     var edit4 = document.getElementById("edit4");
-    //     var delete4 = document.getElementById("delete4");
-
-    //     class4.style.background = "white";
-    //     edit4.style.visibility = "hidden";
-    //     delete4.style.visibility = "hidden";
-    //     class4.disabled = true;
-    //     class4.innerHTML = "Class 4";
-    //     }
-
-    //  function deleteClass5(){
-    //     var class5 = document.getElementById("button5");
-    //     var edit5 = document.getElementById("edit5");
-    //     var delete5 = document.getElementById("delete5");
-
-    //     class5.style.background = "white";
-    //     edit5.style.visibility = "hidden";
-    //     delete5.style.visibility = "hidden";
-    //     class5.disabled = true;
-    //     class5.innerHTML = "Class 5";
-    //     }
-
-    //  function editClass1(){
-    //     var button1 = document.getElementById("button1");
-    //     var newText = prompt("Enter a new class name","Class 1");
-    //     button1.innerHTML = newText;
-    //     return 0;
-    //      }
-
-    //  function editClass2(){
-    //     var button2 = document.getElementById("button2");
-    //     var newText = prompt("Enter a new class name","Class 2");
-    //     button2.innerHTML = newText;
-    //     return 0;
-    //      }
-
-    //  function editClass3(){
-    //     var button3 = document.getElementById("button3");
-    //     var newText = prompt("Enter a new class name","Class 3");
-    //     button3.innerHTML = newText;
-    //     return 0;
-    //      }
-
-    //  function editClass4(){
-    //     var button4 = document.getElementById("button4");
-    //     var newText = prompt("Enter a new class name","Class 4");
-    //     button4.innerHTML = newText;
-    //     return 0;
-    //      }
-
-    //  function editClass5(){
-    //     var button5 = document.getElementById("button5");
-    //     var newText = prompt("Enter a new class name","Class 5");
-    //     button5.innerHTML = newText;
-    //     return 0;
-    //      }
-     </script>
-        </body>
+      </script>
+    </body>
 </html>
