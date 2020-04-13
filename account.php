@@ -56,8 +56,8 @@ if (!isset($_SESSION['session_user_id'])) {
 
 
   
-<?php
-require('flashme-connectdb.php');
+
+<!-- require('flashme-connectdb.php');
 $user_id = $_SESSION['session_user_id'];
 $query = "SELECT * FROM user_info WHERE user_id=$user_id";
 $result = $db->query($query);
@@ -67,24 +67,24 @@ while($row = $result->fetch(PDO::FETCH_ASSOC)) {
     $name = $row["name"];
     $email = $row["email"];
     $password = $row["password"];
-}
-?>
+} -->
+
 
 
   <div class="jumbotron" style="background-color:#ff9d26">
     <div class="container" align = "middle">
       <br/>
       <br/>
-      <h1 style="color:white">Welcome <?php echo $name ?>! </h1>
+      <h1 style="color:white">Welcome <?php echo $_SESSION['session_name'] ?>! </h1>
     <legend align="center" style="color:white"> Your information</legend>
     <div  class ="container "align="left" style="border: 1px solid gray; background-color: white; width:65%" >
         <br/>
         <h5>Name </h5>
-        <p >&nbsp &nbsp <?php echo $name ?></p>
+        <p >&nbsp &nbsp <?php echo $_SESSION['session_name'] ?></p>
         <h5>Email </h5>
-        <p >&nbsp &nbsp <?php echo $email ?></p>
+        <p >&nbsp &nbsp <?php echo $_SESSION['session_email'] ?></p>
         <h5>Password </h5>
-        <p >&nbsp &nbsp <?php echo $password ?></p>
+        <p >&nbsp &nbsp <?php echo $_SESSION['session_password'] ?></p>
     </div>
     </div>
   <br>

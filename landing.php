@@ -115,8 +115,8 @@ if (!isset($_SESSION['session_user_id'])) {
       </div>
     </header>
 
-<?php
-require('flashme-connectdb.php');
+
+<!-- require('flashme-connectdb.php');
 $user_id = $_SESSION['session_user_id'];
 $query = "SELECT * FROM user_info WHERE user_id=$user_id";
 $result = $db->query($query);
@@ -126,12 +126,12 @@ while($row = $result->fetch(PDO::FETCH_ASSOC)) {
     $name = $row["name"];
     $email = $row["email"];
     $password = $row["password"];
-}
-?>
+} -->
+
     
     <br><br/>
     <center>
-    <h1 style="color:white"><?php echo $name ?>'s Classes</h1>
+    <h1 style="color:white"><?php echo $_SESSION['session_name'] ?>'s Classes</h1>
     <h5 style="color:white">Create Classes to hold sets of flashcards</h5>
     <br>
     <div class="row-center">

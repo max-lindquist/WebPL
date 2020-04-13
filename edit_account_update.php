@@ -28,6 +28,9 @@ if ($_SERVER['REQUEST_METHOD'] == "POST")
   // $_SESSION['session_name'] = $result['name'];
   // $_SESSION['email'] = $result['email'];
   // $_SESSION['password'] = $result['password'];
+  $_SESSION['session_name'] = $name;
+  $_SESSION['session_email'] = $email;
+  $_SESSION['session_password'] = $password;
 
   echo("<script>location.href = 'account.php';</script>");
   

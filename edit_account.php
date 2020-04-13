@@ -54,8 +54,7 @@ if (!isset($_SESSION['session_user_id'])) {
 
     </header>
   
-  <?php
-  require('flashme-connectdb.php');
+  <!-- require('flashme-connectdb.php');
   $user_id = $_SESSION['session_user_id'];
   $query = "SELECT * FROM user_info WHERE user_id=$user_id";
   $result = $db->query($query);
@@ -65,8 +64,8 @@ if (!isset($_SESSION['session_user_id'])) {
       $name = $row["name"];
       $email = $row["email"];
       $password = $row["password"];
-  }
-  ?>
+  } -->
+  
 
   <div class="jumbotron" style="background-color:#ff9d26">
   <div class="container" align = "middle">
@@ -77,19 +76,19 @@ if (!isset($_SESSION['session_user_id'])) {
           <form action="edit_account_update.php" name="RegisterForm" method="POST" onsubmit="return signUpValidate()">
                 <div class = "form-group">
                     <h5>Name </h5>
-                     <input type="text" class="form-control" value="<?php echo $name ?>" name = "Name" id="Name">
+                     <input type="text" class="form-control" value="<?php echo $_SESSION['session_name'] ?>" name = "Name" id="Name">
                 </div>
                 <div class = "form-group">
                     <h5>Email </h5>
-                  <input type="email" class="form-control" value="<?php echo $email ?>" name = "Email" id="Email" onclick="editEmail()" readonly>
+                  <input type="email" class="form-control" value="<?php echo $_SESSION['session_email'] ?>" name = "Email" id="Email" onclick="editEmail()" readonly>
                 </div>
                 <div class = "form-group">
                     <h5>Password </h5>
-                  <input type="password" class="form-control" value="<?php echo $password ?>" name = "Password" id="Password">
+                  <input type="password" class="form-control" value="<?php echo $_SESSION['session_password'] ?>" name = "Password" id="Password">
                 </div>
               <div class = "form-group">
                   <h5>Confirm Password</h5>
-                  <input type="password" class="form-control" value="<?php echo $password ?>" id="PasswordConf">
+                  <input type="password" class="form-control" value="<?php echo $_SESSION['session_password'] ?>" id="PasswordConf">
                 </div>
                 <div class ="form-check" align="left">
                   <input type="checkbox" class="form-check-input" id="createShowPass" onclick="pass()">
