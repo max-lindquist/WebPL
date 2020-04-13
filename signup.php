@@ -33,7 +33,9 @@
 
     if (checkEmail($email) == true)
     {
-    echo "There is already an account with that email";
+    echo "<script type='text/javascript'>
+    alert('Error: There is already an account with that email address ')
+    </script>";
     }
 
     else
