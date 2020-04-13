@@ -34,7 +34,9 @@
 
     if (validate($email, $password) == false)
     {
-    echo "That is not a valid email and password";
+    echo "<script type='text/javascript'>
+    alert('Error: That is not a valid username and password ')
+    </script>";
     }
 
     else
