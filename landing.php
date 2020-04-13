@@ -200,10 +200,10 @@ else {
           <a href="flashcardset.php?class_id=<?php echo $class_id ?>"  style="margin-bottom:25px; text-align:center; font-family: impact; color:black; font-size:20px;">
             <p id="label1"><?php echo $name ?></p>
           </a>
+        </div>
+      </div>
       </div>
 
-      </div>
-      </div>
       <?php
       $count++;
   }

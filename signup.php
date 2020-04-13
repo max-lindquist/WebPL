@@ -46,11 +46,11 @@
     $statement->execute();
     $statement->closeCursor();
 
-    $_SESSION['name'] = $name;
-    $_SESSION['email'] = $email;
-    $_SESSION['password'] = $password;
+    $_SESSION['session_name'] = $name;
+    $_SESSION['session_email'] = $email;
+    $_SESSION['session_password'] = $password;
 
-    echo("<script>location.href = 'landing.php';</script>");
+    echo("<script>location.href = 'signup_success.html';</script>");
     }
 
   }
