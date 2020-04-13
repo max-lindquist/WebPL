@@ -1,8 +1,12 @@
 
 <!-- Shannon Chu (slc8jz), Max Lindquist (mrl2dj), Jerome Romualdez (jhr3kd) -->
 
-<?php
-    session_start();
+<?php session_start();
+
+if (!isset($_SESSION['session_user_id'])) {
+  echo "<script>location.href = 'index.php';</script>";
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -102,6 +106,9 @@
             <li class="nav-item">
               <a class="nav-link" href="account.php" style="color:white; font-size: 25px;">My Account</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" href="logout.php" style="color:white; font-size: 25px;">Logout</a>
+            </li>
           </ul>
         </div>
         </nav>
@@ -110,7 +117,7 @@
     
     <br><br/>
     <center>
-    <h1 style="color:white"><?php echo $_SESSION['name'] ?>'s Classes</h1>
+    <h1 style="color:white"><?php echo $_SESSION['session_name'] ?>'s Classes</h1>
     <h5 style="color:white">Create Classes to hold sets of flashcards</h5>
     <br>
     <div class="row-center">
@@ -149,8 +156,8 @@
 
 <?php
 require('flashme-connectdb.php');
-
-$query = "SELECT * FROM class";
+$user_id = $_SESSION['session_user_id'];
+$query = "SELECT * FROM class WHERE user_id=$user_id";
 $result = $db->query($query);
 $num_rows = $result->rowCount();
 //echo "num_rows=$num_rows\n";

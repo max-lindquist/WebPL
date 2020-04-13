@@ -1,13 +1,16 @@
-<<<<<<< HEAD
 <!-- Shannon Chu (slc8jz), Max Lindquist (mrl2dj), Jerome Romualdez (jhr3kd) -->
 
 
 <?php session_start();
 
-if (!isset($_GET['class_id'])) {
+if (!isset($_SESSION['session_user_id'])) {
+  echo "<script>location.href = 'index.php';</script>";
+}
+else if (!isset($_GET['class_id'])) {
   echo "<script>location.href = 'landing.php';</script>";
 }
 
+$user_id = $_SESSION['session_user_id'];
 $class_id = $_GET['class_id'];
 
 require('flashme-connectdb.php');
@@ -122,6 +125,9 @@ if ($num_rows > 0) {
               <li class="nav-item">
                 <a class="nav-link" href="account.html" style="color:white; font-size: 25px;">My Account</a>
               </li>
+              <li class="nav-item">
+                <a class="nav-link" href="logout.php" style="color:white; font-size: 25px;">Logout</a>
+              </li>
             </ul>
           </div>
         </nav>
@@ -151,7 +157,7 @@ if ($num_rows > 0) {
       <div class = "container" style="margin-top:50px; margin-bottom:50px; background-color:white; border-radius: 25px;">
 <?php
 
-$query = "SELECT * FROM flashcard_set WHERE class_id=$class_id";
+$query = "SELECT * FROM flashcard_set WHERE user_id=$user_id AND class_id=$class_id";
 $result = $db->query($query);
 $num_rows = $result->rowCount();
 //echo "num_rows=$num_rows\n";
@@ -210,112 +216,106 @@ if ($num_rows > 0) {
     function closeForm() {
       document.getElementById("myForm").style.display = "none";
     }
-      card1 = document.getElementById("card1");
-      card2 = document.getElementById("card2");
-      card3 = document.getElementById("card3");
-      card4 = document.getElementById("card4");
-      card5 = document.getElementById("card5");
-      card6 = document.getElementById("card6");
-      card7 = document.getElementById("card7");
-      card8 = document.getElementById("card8");
-      card9 = document.getElementById("card9");
-      card10 = document.getElementById("card10");
-      card11 = document.getElementById("card11");
-      card12 = document.getElementById("card12");
+    //   card1 = document.getElementById("card1");
+    //   card2 = document.getElementById("card2");
+    //   card3 = document.getElementById("card3");
+    //   card4 = document.getElementById("card4");
+    //   card5 = document.getElementById("card5");
+    //   card6 = document.getElementById("card6");
+    //   card7 = document.getElementById("card7");
+    //   card8 = document.getElementById("card8");
+    //   card9 = document.getElementById("card9");
+    //   card10 = document.getElementById("card10");
+    //   card11 = document.getElementById("card11");
+    //   card12 = document.getElementById("card12");
 
-      label1 = document.getElementById("label1");
-      label2 = document.getElementById("label2");
-      label3 = document.getElementById("label3");
-      label4 = document.getElementById("label4");
-      label5 = document.getElementById("label5");
-      label6 = document.getElementById("label6");
-      label7 = document.getElementById("label7");
-      label8 = document.getElementById("label8");
-      label9 = document.getElementById("label9");
-      label10 = document.getElementById("label10");
-      label11 = document.getElementById("label11");
-      label12 = document.getElementById("label12");
+    //   label1 = document.getElementById("label1");
+    //   label2 = document.getElementById("label2");
+    //   label3 = document.getElementById("label3");
+    //   label4 = document.getElementById("label4");
+    //   label5 = document.getElementById("label5");
+    //   label6 = document.getElementById("label6");
+    //   label7 = document.getElementById("label7");
+    //   label8 = document.getElementById("label8");
+    //   label9 = document.getElementById("label9");
+    //   label10 = document.getElementById("label10");
+    //   label11 = document.getElementById("label11");
+    //   label12 = document.getElementById("label12");
 
 
 
-      card1.addEventListener("contextmenu", e => {
-      e.preventDefault();
-      var newText = prompt("Enter a new set name","Set 1");
-      label1.innerHTML = newText;
-      });
+    //   card1.addEventListener("contextmenu", e => {
+    //   e.preventDefault();
+    //   var newText = prompt("Enter a new set name","Set 1");
+    //   label1.innerHTML = newText;
+    //   });
 
-      card2.addEventListener("contextmenu", e => {
-      e.preventDefault();
-      var newText = prompt("Enter a new set name","Set 2");
-      label2.innerHTML = newText;
-      });
+    //   card2.addEventListener("contextmenu", e => {
+    //   e.preventDefault();
+    //   var newText = prompt("Enter a new set name","Set 2");
+    //   label2.innerHTML = newText;
+    //   });
 
-      card3.addEventListener("contextmenu", e => {
-      e.preventDefault();
-      var newText = prompt("Enter a new set name","Set 3");
-      label3.innerHTML = newText;
-      });
+    //   card3.addEventListener("contextmenu", e => {
+    //   e.preventDefault();
+    //   var newText = prompt("Enter a new set name","Set 3");
+    //   label3.innerHTML = newText;
+    //   });
 
-      card4.addEventListener("contextmenu", e => {
-      e.preventDefault();
-      var newText = prompt("Enter a new set name","Set 4");
-      label4.innerHTML = newText;
-      });
+    //   card4.addEventListener("contextmenu", e => {
+    //   e.preventDefault();
+    //   var newText = prompt("Enter a new set name","Set 4");
+    //   label4.innerHTML = newText;
+    //   });
 
-      card5.addEventListener("contextmenu", e => {
-      e.preventDefault();
-      var newText = prompt("Enter a new set name","Set 5");
-      label5.innerHTML = newText;
-      });
+    //   card5.addEventListener("contextmenu", e => {
+    //   e.preventDefault();
+    //   var newText = prompt("Enter a new set name","Set 5");
+    //   label5.innerHTML = newText;
+    //   });
 
-      card6.addEventListener("contextmenu", e => {
-      e.preventDefault();
-      var newText = prompt("Enter a new set name","Set 6");
-      label6.innerHTML = newText;
-      });
+    //   card6.addEventListener("contextmenu", e => {
+    //   e.preventDefault();
+    //   var newText = prompt("Enter a new set name","Set 6");
+    //   label6.innerHTML = newText;
+    //   });
 
-      card7.addEventListener("contextmenu", e => {
-      e.preventDefault();
-      var newText = prompt("Enter a new set name","Set 7");
-      label7.innerHTML = newText;
-      });
+    //   card7.addEventListener("contextmenu", e => {
+    //   e.preventDefault();
+    //   var newText = prompt("Enter a new set name","Set 7");
+    //   label7.innerHTML = newText;
+    //   });
 
-      card8.addEventListener("contextmenu", e => {
-      e.preventDefault();
-      var newText = prompt("Enter a new set name","Set 8");
-      label8.innerHTML = newText;
-      });
+    //   card8.addEventListener("contextmenu", e => {
+    //   e.preventDefault();
+    //   var newText = prompt("Enter a new set name","Set 8");
+    //   label8.innerHTML = newText;
+    //   });
 
-      card9.addEventListener("contextmenu", e => {
-      e.preventDefault();
-      var newText = prompt("Enter a new set name","Set 9");
-      label9.innerHTML = newText;
-      });
+    //   card9.addEventListener("contextmenu", e => {
+    //   e.preventDefault();
+    //   var newText = prompt("Enter a new set name","Set 9");
+    //   label9.innerHTML = newText;
+    //   });
 
-      card10.addEventListener("contextmenu", e => {
-      e.preventDefault();
-      var newText = prompt("Enter a new set name","Set 10");
-      label10.innerHTML = newText;
-      });
+    //   card10.addEventListener("contextmenu", e => {
+    //   e.preventDefault();
+    //   var newText = prompt("Enter a new set name","Set 10");
+    //   label10.innerHTML = newText;
+    //   });
 
-      card11.addEventListener("contextmenu", e => {
-      e.preventDefault();
-      var newText = prompt("Enter a new set name","Set 11");
-      label11.innerHTML = newText;
-      });
+    //   card11.addEventListener("contextmenu", e => {
+    //   e.preventDefault();
+    //   var newText = prompt("Enter a new set name","Set 11");
+    //   label11.innerHTML = newText;
+    //   });
 
-      card12.addEventListener("contextmenu", e => {
-      e.preventDefault();
-      var newText = prompt("Enter a new set name","Set 12");
-      label12.innerHTML = newText;
-      });
+    //   card12.addEventListener("contextmenu", e => {
+    //   e.preventDefault();
+    //   var newText = prompt("Enter a new set name","Set 12");
+    //   label12.innerHTML = newText;
+    //   });
 
     </script>
   </body>
 </html>
-=======
-<?php
-    session_start();
-    include('flashcardset.html');
-?>
->>>>>>> 176c82b62330773635c56c60f7d2cbd07d19a08f

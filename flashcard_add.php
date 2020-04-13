@@ -5,6 +5,7 @@ session_start();
 if ($_SERVER['REQUEST_METHOD'] == "GET")
   {
     require('flashme-connectdb.php');
+    $user_id = $_SESSION['session_user_id'];
     $class_id = $_GET['class_id'];
     $set_id = $_GET['set_id'];
     $term = $_GET['term'];
@@ -15,8 +16,9 @@ if ($_SERVER['REQUEST_METHOD'] == "GET")
     // echo "There is already an account with that email";
     // }
 
-    $query = "INSERT INTO flashcard (class_id, set_id, term, definition) VALUES (:query_class_id, :query_set_id, :query_term, :query_definition)";
+    $query = "INSERT INTO flashcard (user_id, class_id, set_id, term, definition) VALUES (:query_user_id, :query_class_id, :query_set_id, :query_term, :query_definition)";
     $statement = $db->prepare($query);
+    $statement->bindValue(':query_user_id', $user_id);
     $statement->bindValue(':query_class_id', $class_id);
     $statement->bindValue(':query_set_id', $set_id);
     $statement->bindValue(':query_term', $term);

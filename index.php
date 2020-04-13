@@ -17,11 +17,13 @@
         foreach ($results as $result)
         {
             if ($emailAttempt == $result['email'] && $passwordAttempt == $result['password']){
-                return $result['name'];
+                $_SESSION['session_user_id'] = $result['user_id']; 
+                $_SESSION['session_name'] = $result['name'];
+                return true;
                 }
         }
-        return false;
     }
+
 ?>
   <?php
   if ($_SERVER['REQUEST_METHOD'] == "POST")
@@ -37,8 +39,7 @@
 
     else
     {
-
-    $_SESSION['name'] = validate($email, $password);
+   // $_SESSION['name'] = $name;
     $_SESSION['email'] = $email;
     $_SESSION['password'] = $password;
 

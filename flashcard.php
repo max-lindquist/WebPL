@@ -1,13 +1,15 @@
-<<<<<<< HEAD
-
 <!-- Shannon Chu (slc8jz), Max Lindquist (mrl2dj), Jerome Romualdez (jhr3kd) -->
 
 <?php session_start();
 
-if (!isset($_GET['set_id']) || !isset($_GET['class_id'])) {
+if (!isset($_SESSION['session_user_id'])) {
+  echo "<script>location.href = 'index.php';</script>";
+}
+else if (!isset($_GET['set_id']) || !isset($_GET['class_id'])) {
   echo "<script>location.href = 'flashcardset.php';</script>";
 }
 
+$user_id = $_SESSION['session_user_id'];
 $set_id = $_GET['set_id'];
 $class_id = $_GET['class_id'];
 
@@ -248,7 +250,7 @@ if ($num_rows > 0) {
   {
     <?php
 
-    $query = "SELECT * FROM flashcard WHERE class_id=$class_id AND set_id=$set_id";
+    $query = "SELECT * FROM flashcard WHERE user_id=$user_id AND class_id=$class_id AND set_id=$set_id";
     $result = $db->query($query);
     $num_rows = $result->rowCount();
     //echo "num_rows=$num_rows\n";
