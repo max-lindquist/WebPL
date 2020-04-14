@@ -1,3 +1,5 @@
+<!-- Shannon Chu (slc8jz), Max Lindquist (mrl2dj), Jerome Romualdez (jhr3kd) -->
+
 <?php
     session_start();
     include('index.html');
