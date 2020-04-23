@@ -1,0 +1,85 @@
+<div class="container">
+    <h1>
+        {{ title }}!
+    </h1>
+    <h3> By {{ authors }} </h3>
+
+    <hr/>
+
+    <form #suggestionForm="ngForm" (ngSubmit)="onSubmit(suggestionForm.value)">
+        <div class="form-group">
+            <label>Name: </label>
+            <input type="text" class="form-control" name="name"
+                   required
+                   #name="ngModel"
+                   [class.is-invalid]="name.invalid && name.touched"
+                   [(ngModel)]="suggestionModel.name">
+            <small class="text-danger" [class.d-none]="name.valid || name.untouched">Name is requried</small>
+        </div>
+
+        <div class="form-group">
+            <label>Email: </label>
+            <input type="email" [(ngModel)]="suggestionModel.email"  class="form-control" name="email">
+        </div>
+
+
+        <div class="form-group">
+            <label>Suggestion: </label>
+            <input type="text" [(ngModel)]="suggestionModel.suggestion" class="form-control"name="suggestion">
+        </div>
+
+        <div class="form-group">
+            <label>Rating: </label>
+            <div class="form-check">
+                <input [(ngModel)]="suggestionModel.rating"
+                       class="form-check-input" type="radio" name="rating" value="1">
+                <label class="form-check-label">1</label>
+            </div>
+            <div class="form-check">
+                <input [(ngModel)]="suggestionModel.rating"
+                       class="form-check-input" type="radio" name="rating" value="10">
+                <label class="form-check-label">10</label>
+            </div>
+        </div>
+
+        <div class="form-check mb-3">
+            <input [(ngModel)]="suggestionModel.useAgain"
+                   class="form-check-input" type="checkbox" name="use_again">
+            <label class="form-check-label">Would you use this app again? </label>
+        </div>
+
+        <button class="btn btn-primary"
+                (click)="confirmSuggestion(suggestionForm.value)"
+                title="always enabled">Make Suggestion</button>
+
+        &nbsp;&nbsp;&nbsp;&nbsp;
+
+    </form>
+
+    <hr/>
+    <h3>Suggestion Confirmation</h3>
+    Confirm:
+    <font color="green" style="font-style:italic">
+        <!-- If confirm_msg is not empty, display confirm message, otherwise, display default text -->
+        {{ (confirm_msg.length > 0)? confirm_msg : 'Display your confirmation message' }}</font> <br/>
+    Data submitted:
+    <font color="green" style="font-style:italic">
+        <!-- If confirm_msg is not empty, display form data that was submitted. -->
+        <!-- We don't check the size of data_submitted here since we want to avoid error
+             when the page is loaded and form has not been submitted (and data_submitted is an object -- json data).
+             Also, we designed our program to set confirm_msg only after the button has been clicked
+             (i.e., the form has been submitted). Thus, we can make use of confirm_msg here. -->
+        {{ (confirm_msg.length > 0)? (data_submitted | json) : 'Display the submitted suggestion' }}
+    </font> <br/>
+    <hr/>
+
+    Response from PHP:<br/>
+    <font color="green" style="font-style:italic">
+        <!-- If confirm_msg is not empty, display the response from the PHP backend. -->
+        {{ (confirm_msg.length > 0)? (responsedata | json) : 'Display response from PHP backend' }}
+    </font>
+
+</div>
+
+
+<br/><br/><br/>
