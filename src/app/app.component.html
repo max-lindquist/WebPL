@@ -1,0 +1,121 @@
+<div class="container">
+  <h1>
+    {{ title }}!
+  </h1>
+  <h3> By {{ authors }} </h3>
+
+<hr/>
+
+<!--{{ orderForm.value | json }}-->
+<!--<br/>-->
+<!--Email: {{ orderForm.value.email }}-->
+<!--<br/>-->
+<!--Data from order model {{ orderModel | json }}-->
+
+<!--<hr/>-->
+<!--Is name input valid? {{ name.valid }}-->
+<!--<br/>-->
+<!--Has name input been visited? {{ name.touched }}-->
+<!--<br/>-->
+<!--Has name input been changed? {{ name.dirty }}-->
+<!--<br/>-->
+<!--<hr/>-->
+<!--Confirm: {{ confirm_msg }} <br/>-->
+<!--Data submitted: {{ data_submitted | json }}-->
+<!--<hr/>-->
+
+
+ <form #orderForm="ngForm" (ngSubmit)="onSubmit(orderForm.value)">
+  <div class="form-group">
+    <label>Name: </label>
+    <input type="text" class="form-control" name="name"
+           required
+           #name="ngModel"
+           [class.is-invalid]="name.invalid && name.touched"
+           [(ngModel)]="orderModel.name">
+    <small class="text-danger" [class.d-none]="name.valid || name.untouched">Name is requried</small>
+  </div>
+
+  <div class="form-group">
+    <label>Email: </label>
+    <input type="email" [(ngModel)]="orderModel.email"  class="form-control" name="email">
+  </div>
+
+  <div class="form-group">
+    <label>Phone: </label>
+    <input type="tel" class="form-control" name="phone"
+          required pattern="^\d{10}$"
+          #phone="ngModel"
+          [class.is-invalid]="phone.invalid && phone.touched"
+          [(ngModel)]="orderModel.phone">
+    <small class="text-danger" [class.d-none]="phone.valid || phone.untouched">Phone number is required
+         and must be 10 digits</small>
+  </div>
+
+  <div class="form-group">
+    <select class="custom-select" [(ngModel)]="orderModel.drink" name="drink_option">
+      <option value="">What would you like to drink? </option>
+      <option *ngFor="let drink of drinks"> {{ drink }}
+      </option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label>Hot or cold?</label>
+    <div class="form-check">
+      <input [(ngModel)]="orderModel.tempPreference"
+             class="form-check-input" type="radio" name="tempPreference" value="hot">
+      <label class="form-check-label">Hot</label>
+    </div>
+    <div class="form-check">
+      <input [(ngModel)]="orderModel.tempPreference"
+             class="form-check-input" type="radio" name="tempPreference" value="cold">
+      <label class="form-check-label">Cold</label>
+    </div>
+  </div>
+
+  <div class="form-check mb-3">
+    <input [(ngModel)]="orderModel.sendText"
+           class="form-check-input" type="checkbox" name="sendmsg">
+    <label class="form-check-label">Send me a text message when my order is ready </label>
+  </div>
+
+  <button class="btn btn-primary"
+          (click)="confirmOrder(orderForm.value)"
+          title="always enabled">Place order</button>
+
+  &nbsp;&nbsp;&nbsp;&nbsp;
+
+<!--  <button type="submit" class="btn btn-success"
+          [disabled]="!orderForm.form.valid"
+          title="enabled once the form is valid">Submit</button>
+-->
+</form>
+
+<hr/>
+<h3>Order Confirmation</h3>
+Confirm:
+  <font color="green" style="font-style:italic">
+    <!-- If confirm_msg is not empty, display confirm message, otherwise, display default text -->
+    {{ (confirm_msg.length > 0)? confirm_msg : 'Display your confirmation message' }}</font> <br/>
+Data submitted:
+  <font color="green" style="font-style:italic">
+    <!-- If confirm_msg is not empty, display form data that was submitted. -->
+    <!-- We don't check the size of data_submitted here since we want to avoid error
+         when the page is loaded and form has not been submitted (and data_submitted is an object -- json data).
+         Also, we designed our program to set confirm_msg only after the button has been clicked
+         (i.e., the form has been submitted). Thus, we can make use of confirm_msg here. -->
+    {{ (confirm_msg.length > 0)? (data_submitted | json) : 'Display the submitted order' }}
+  </font> <br/>
+<hr/>
+
+Response from PHP:<br/>
+  <font color="green" style="font-style:italic">
+    <!-- If confirm_msg is not empty, display the response from the PHP backend. -->
+  {{ (confirm_msg.length > 0)? (responsedata | json) : 'Display response from PHP backend' }}
+  </font>
+
+</div>
+
+
+<br/><br/><br/>
