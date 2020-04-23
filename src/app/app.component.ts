@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Order } from './order';
+import { Suggestion } from './suggestion';
 
 import { HttpClient, HttpErrorResponse, HttpParams } from '@angular/common/http';
 
@@ -9,26 +9,24 @@ import { HttpClient, HttpErrorResponse, HttpParams } from '@angular/common/http'
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Awesome Shop';
-  authors = 'your name';
+  title = 'fLash mE';
+  authors = 'JR, SC, ML';
 
   constructor(private http: HttpClient) {   }
 
   // Let's create a property to store a response from the back end
   // and try binding it back to the view
-  responsedata = new Order('', '', null, '', '', null);
-
-  drinks = ['Coffee', 'Tea', 'Milk'];
-  orderModel = new Order('someone', 'someone@uva.edu', 9991234567, '', '', true);
+  responsedata = new Suggestion('', '', '', '', null);
+  suggestionModel = new Suggestion('someone', 'someone@uva.edu', '', '', true);
 
 
   confirm_msg = '';
   data_submitted = '';
 
-  confirmOrder(data) {
+  confirmSuggestion(data) {
      console.log(data);
      this.confirm_msg = 'Thank you, ' + data.name + '(' + data.name.length + ')';
-     this.confirm_msg += '. You ordered ' + data.drink_option;
+     this.confirm_msg += '. You suggested ' + data.suggestion;
   }
 
 
@@ -45,7 +43,7 @@ export class AppComponent {
      // To send a GET request, use the concept of URL rewriting to pass data to the backend
      // this.http.get<Order>('http://localhost/cs4640/inclass11/ngphp-get.php?str='+params)
      // To send a POST request, pass data as an object
-     this.http.post<Order>('http://localhost/inclass6/angular-inclass6/angular-inclass6/src/php/ngphp-post.php', params)
+     this.http.post<Suggestion>('http://localhost/php/ngphp-post.php', params)
      .subscribe((data) => {
           // Receive a response successfully, do something here
           // console.log('Response from backend ', data);
